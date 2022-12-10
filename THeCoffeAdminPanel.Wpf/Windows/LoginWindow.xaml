@@ -1,0 +1,65 @@
+﻿<Window x:Class="TheCoffeAdminPanel.Wpf.Windows.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TheCoffeAdminPanel.Wpf.Windows"
+        mc:Ignorable="d"
+        xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+        WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="CanMinimize"
+        ShowInTaskbar="False"
+        Background="#082032"
+        Title="LoginWindow" Height="650" Width="1000">
+    <Grid >
+        <StackPanel Margin="0,100,0,0" VerticalAlignment="Center">
+            <DockPanel Width="350" Margin="5">
+                <md:PackIcon
+                    VerticalAlignment="Center"
+                    Foreground="Gray"
+                    Kind="Coffee" />
+                <TextBox
+                    x:Name="Username"
+                    Width="300"
+                    md:HintAssist.Hint="Username"
+                    Foreground="Snow"
+                    Opacity="0.8" />
+            </DockPanel>
+            <DockPanel Width="350" Margin="5">
+                <md:PackIcon
+                    VerticalAlignment="Center"
+                    Foreground="Gray"
+                    Kind="ImageDescription" />
+                <PasswordBox
+                    x:Name="Password"
+                    Width="300"
+                    md:HintAssist.Hint="Password"
+                    Foreground="Snow"
+                    Opacity="0.8" />
+            </DockPanel>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal">
+                <Button
+                    x:Name="SaveBtn"
+                    Width="250"
+                    Margin="10"
+                    Click="SaveBtn_Click">
+                    <StackPanel Orientation="Horizontal">
+                        <md:PackIcon
+                            Width="25"
+                            Height="25"
+                            Kind="ContentSaveOutline" />
+                        <TextBlock
+                            Margin="3"
+                            VerticalAlignment="Center"
+                            Text="Login" />
+                    </StackPanel>
+
+                </Button>
+                <Button Background="Red" Click="Button_Click">
+                    <md:PackIcon Kind="ExitToApp" />
+                </Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
