@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
@@ -12,17 +13,17 @@ namespace TheCoffeeAdminPanel.Service.Services
 {
     public class CoffeeService : ICoffeeService
     {
-        public async ValueTask<Response<CoffeeForViewDTO>> CreateAsync(CoffeeForCreationDTO coffeeForCreationDTO)
+        public async ValueTask<Response<CoffeeForViewDTO>> CreateAsync(CoffeeForCreationDTO coffeeForCreationDTO, string token)
         {
             using (HttpClient client = new HttpClient())
             {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
-                MultipartFormDataContent multipart = new MultipartFormDataContent();
-                string name = Guid.NewGuid().ToString("N");
-                multipart.Add(new StreamContent(coffeeForCreationDTO.Image), name, name + ".png");
+                MultipartFormDataContent formData = new MultipartFormDataContent();
+                formData.Add(new StreamContent(coffeeForCreationDTO.Image), "formFile", "image.png");
 
                 var responce = await client.PostAsync(AppConstants.COFFEE_CONTROLLER +
-                    $"?name={coffeeForCreationDTO.Name}&description={coffeeForCreationDTO.Description}&price={coffeeForCreationDTO.Price}", multipart);
+                    $"?name={coffeeForCreationDTO.Name}&description={coffeeForCreationDTO.Description}&price={coffeeForCreationDTO.Price}", formData);
 
                 if (!responce.IsSuccessStatusCode)
                 {
@@ -41,10 +42,12 @@ namespace TheCoffeeAdminPanel.Service.Services
             };
         }
 
-        public async ValueTask<bool> DeleteAsync(string id)
+        public async ValueTask<bool> DeleteAsync(string id, string token)
         {
             using (HttpClient client = new HttpClient())
             {
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+
                 var response = await client.DeleteAsync(AppConstants.COFFEE_CONTROLLER + id);
 
                 return response.IsSuccessStatusCode;

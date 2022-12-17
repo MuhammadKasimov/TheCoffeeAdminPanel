@@ -10,3 +10,15 @@ C:\Users\muham\source\repos\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\
 C:\Users\muham\source\repos\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\refint\TheCoffeeAdminPanel.Service.dll
 C:\Users\muham\source\repos\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.pdb
 C:\Users\muham\source\repos\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\ref\TheCoffeeAdminPanel.Service.dll
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\bin\Debug\net5.0\TheCoffeeAdminPanel.Service.deps.json
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\bin\Debug\net5.0\TheCoffeeAdminPanel.Service.dll
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\bin\Debug\net5.0\TheCoffeeAdminPanel.Service.pdb
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.csproj.AssemblyReference.cache
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.AssemblyInfoInputs.cache
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.AssemblyInfo.cs
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.csproj.CoreCompileInputs.cache
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.dll
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\refint\TheCoffeeAdminPanel.Service.dll
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\TheCoffeeAdminPanel.Service.pdb
+C:\Users\muham\TheCoffeeAdminPanel\TheCoffeeAdminPanel.Service\obj\Debug\net5.0\ref\TheCoffeeAdminPanel.Service.dll
