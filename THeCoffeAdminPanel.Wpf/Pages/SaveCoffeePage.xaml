@@ -1,30 +1,31 @@
-﻿<Page x:Class="TheCoffeAdminPanel.Wpf.Pages.SaveCoffeePage"
-      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:TheCoffeAdminPanel.Wpf.Pages"
-      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
-      Title="SavePage"
-      Height="450"
-      Width="800"
-      mc:Ignorable="d">
+﻿<Page
+    x:Class="TheCoffeAdminPanel.Wpf.Pages.SaveCoffeePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:TheCoffeAdminPanel.Wpf.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+    Title="SavePage"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
     <Grid>
         <StackPanel Margin="5">
-                <Ellipse Width="100" Height="100">
-                    <Ellipse.Fill>
-                        <ImageBrush x:Name="CoffeeImg" />
-                    </Ellipse.Fill>
-                </Ellipse>
-                <Button
-                    x:Name="ImageBtn"
-                    Background="#0E1621"
-                    BorderThickness="0"
-                    HorizontalAlignment="Center"
-                    Click="ImageBtn_Click"
-                    Content="Choose Image" />
-            </StackPanel>
-            <StackPanel Margin="0,100,0,0" VerticalAlignment="Center">
+            <Ellipse Width="100" Height="100">
+                <Ellipse.Fill>
+                    <ImageBrush x:Name="CoffeeImg" />
+                </Ellipse.Fill>
+            </Ellipse>
+            <Button
+                x:Name="ImageBtn"
+                HorizontalAlignment="Center"
+                Background="#0E1621"
+                BorderThickness="0"
+                Click="ImageBtn_Click"
+                Content="Choose Image" />
+        </StackPanel>
+        <StackPanel Margin="0,100,0,0" VerticalAlignment="Center">
             <DockPanel Width="350" Margin="5">
                 <md:PackIcon
                     VerticalAlignment="Center"

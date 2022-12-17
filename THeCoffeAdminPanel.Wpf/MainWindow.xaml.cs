@@ -34,6 +34,7 @@ namespace THeCoffeAdminPanel.Wpf
 
         private void MovePanel_MouseDown(object sender, MouseButtonEventArgs e)
         {
+            DragMove();
         }
 
         private void MinimizeBtn_Click(object sender, RoutedEventArgs e)
@@ -81,7 +82,15 @@ namespace THeCoffeAdminPanel.Wpf
                     shortInfo.NameTxt.Text = coffee.Name;
                     shortInfo.PriceTxt.Text = coffee.Price.ToString();
                     shortInfo.Id = coffee.Id;
-                    shortInfo.UserImg.ImageSource = new BitmapImage(new Uri(AppConstants.BASE_URL + coffee.Attachment.Path));
+
+                    var bit = new BitmapImage();
+                    bit.BeginInit();
+                    bit.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                    bit.CacheOption = BitmapCacheOption.OnLoad;
+                    bit.UriSource = new Uri(AppConstants.BASE_URL + coffee.Attachment.Path);
+                    bit.EndInit();
+
+                    shortInfo.UserImg.ImageSource = bit;
                     button.Content = shortInfo;
 
                     UsersList.Items.Add(button);
@@ -106,12 +115,18 @@ namespace THeCoffeAdminPanel.Wpf
                 savePage.Description.Text = coffee.Description;
                 savePage.Price.Text = coffee.Price.ToString();
                 savePage.IdTxt.Text = coffee.Id.ToString();
-                savePage.CoffeeImg.ImageSource = new BitmapImage(new Uri(AppConstants.BASE_URL + coffee.Attachment.Path, UriKind.Relative));
+
+                var bit = new BitmapImage();
+                bit.BeginInit();
+                bit.CreateOptions = BitmapCreateOptions.IgnoreImageCache;
+                bit.CacheOption = BitmapCacheOption.OnLoad;
+                bit.UriSource = new Uri(AppConstants.BASE_URL + coffee.Attachment.Path);
+                bit.EndInit();
+
+                savePage.CoffeeImg.ImageSource = bit;
                 savePage.AttachmentId = coffee.AttachmentId.ToString();
 
                 UserFrame.Content = savePage;
-
-                new SuccessWindow().ShowDialog();
             }
             else
             {
@@ -131,6 +146,11 @@ namespace THeCoffeAdminPanel.Wpf
             });
 
             thread.Start();
+        }
+
+        private void AddCoffeeBtn_Click(object sender, RoutedEventArgs e)
+        {
+            UserFrame.Content = new AddCoffeePage();
         }
     }
 }

@@ -36,26 +36,21 @@ namespace TheCoffeAdminPanel.Wpf.Pages
         private async void SaveBtn_Click(object sender, RoutedEventArgs e)
         {
 
-            var coffee = (await coffeeService.GetAsync(IdTxt.Text)).Value;
-            if (coffee != null && !string.IsNullOrEmpty(path))
-            {
-                CoffeeForCreationDTO coffeeForCreationDTO = new CoffeeForCreationDTO();
-                coffeeForCreationDTO.Name = String.IsNullOrEmpty(Name.Text) ? coffeeForCreationDTO.Name : Name.Text;
-                coffeeForCreationDTO.Description = String.IsNullOrEmpty(Description.Text) ? coffeeForCreationDTO.Description : Description.Text;
-                coffeeForCreationDTO.Price = String.IsNullOrEmpty(Price.Text) ? coffeeForCreationDTO.Price : long.Parse(Price.Text);
-                coffeeForCreationDTO.Image = File.OpenRead(path);
+            CoffeeForCreationDTO coffeeForCreationDTO = new CoffeeForCreationDTO();
+            coffeeForCreationDTO.Name = string.IsNullOrEmpty(Name.Text) ? coffeeForCreationDTO.Name : Name.Text;
+            coffeeForCreationDTO.Description = string.IsNullOrEmpty(Description.Text) ? coffeeForCreationDTO.Description : Description.Text;
+            coffeeForCreationDTO.Price = string.IsNullOrEmpty(Price.Text) ? coffeeForCreationDTO.Price : long.Parse(Price.Text);
+            coffeeForCreationDTO.Image = File.OpenRead(path);
 
-                await coffeeService.UpdateAsync(IdTxt.Text, AttachmentId, coffeeForCreationDTO, Token.Content);
+            var res = await coffeeService.UpdateAsync(IdTxt.Text, AttachmentId, coffeeForCreationDTO, Token.Content);
 
-            }
-
-            else
-                new ErrorWindow().ShowDialog();
+            if (res.StatusCode < 300)
+                new SuccessWindow().ShowDialog();
         }
 
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (await coffeeService.DeleteAsync(IdTxt.Text))
+            if (await coffeeService.DeleteAsync(IdTxt.Text, Token.Content))
                 new SuccessWindow().ShowDialog();
             else
                 new ErrorWindow().ShowDialog();

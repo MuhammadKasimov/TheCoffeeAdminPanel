@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\muham\source\repos\TheCoffeeAdminPanel\THeCoffeAdminPanel.Wpf\App.xaml
-7-1284672777
+8-379574503
 
-121465185306
+13-698417469
 1981843510247
-Controls\CoffeeControl.xaml;Controls\UserControler.xaml;MainWindow.xaml;Pages\SaveCoffeePage.xaml;Windows\ErrorWindow.xaml;Windows\LoginWindow.xaml;Windows\SuccessWindow.xaml;
+Controls\CoffeeControl.xaml;Controls\UserControler.xaml;MainWindow.xaml;Pages\AddCoffeePage.xaml;Pages\SaveCoffeePage.xaml;Windows\ErrorWindow.xaml;Windows\LoginWindow.xaml;Windows\SuccessWindow.xaml;
 
 True
 

@@ -16,7 +16,7 @@
             Orientation="Horizontal">
             <Ellipse Width="40" Margin="10">
                 <Ellipse.Fill>
-                    <ImageBrush x:Name="UserImg" ImageSource="https://talabamiz.uz/Images//99daf8ac38de4433aa36a61baf4c9c4d.png" />
+                    <ImageBrush x:Name="UserImg" />
                 </Ellipse.Fill>
             </Ellipse>
             <TextBlock
